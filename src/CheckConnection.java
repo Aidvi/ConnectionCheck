@@ -8,10 +8,18 @@ public void clientConToServer() {
 
     try {
         Socket socket = new Socket(con.getIp(), con.getPort());
-        System.out.println("Connection to server is open");
+        connectionCheck(socket.isConnected());
     }
     catch (IOException e) {
         System.out.println(e);
+    }
+}
+public void connectionCheck(boolean isConnected){
+    if (isConnected){
+        System.out.println("there is connection");
+    }
+    else if(!isConnected){
+        System.out.println("no connection");
     }
 }
 
